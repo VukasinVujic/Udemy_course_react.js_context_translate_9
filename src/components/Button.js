@@ -7,8 +7,8 @@ class Button extends React.Component {
     // we use contextType for this.context(contextType must have this name)
     // static contextType = LanguageContext;
 
-    renderSubmit(value) {
-        return value === 'english' ? 'Submit' : 'Voorleggen';
+    renderSubmit(language) {
+        return language === 'english' ? 'Submit' : 'Voorleggen';
     }
 
     renderButton(color) {
@@ -20,7 +20,7 @@ class Button extends React.Component {
 
                     {/* value got from Provider */}
                     <LanguageContext.Consumer > 
-                        { (value) => this.renderSubmit(value)}
+                        { ({language}) => this.renderSubmit(language)}
                     </LanguageContext.Consumer>
                 </button>
             )
